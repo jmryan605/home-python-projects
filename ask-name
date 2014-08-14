@@ -11,6 +11,6 @@ else:
     print("I dont really like that name... Oh well!")
 #--------------------------------------------------------------------------------------
 
+print ("i like cheese")
 print("bye " + name)
-print (" i like cheese")
 print("see you soon!")
