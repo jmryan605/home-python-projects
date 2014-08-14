@@ -1,0 +1,32 @@
+print("Llama Llife")
+
+def ask(question):
+    answer = input(question)
+    answer = answer.lower().strip()
+    return answer
+
+#---------------------------------------------------------
+
+eat = ask("you are a toddler Llama. Eat grass or bushes?")
+if eat == 'grass':
+   passion = ask('''you grow into a young Llama.
+   Is your passion school or sports?''')
+elif eat == 'bush':
+    print("the bush had poison ivy. you choke and die. the end")
+else:
+    print("that wasn't an answer. start over.")
+if passion == 'sports':
+    print('''you fail to make a collage team.
+    you live an uneventful life. the end''')
+elif passion == 'school':
+    job = ask(''' you do well in school and go to a good collage. 
+    do you want to be investor or entrepreneur?''')
+else:
+    print("that wasn't an answer. start over.")
+if job == 'investor':
+    print('''you earn millions but end up feeling somethings missing. 
+    you take your own life''')
+elif job == 'entrepreneur':
+    print("you start a company and lead a happy life. the end.")
+else:
+    print("that wasn't an answer. start over.")
