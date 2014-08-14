@@ -1,0 +1,15 @@
+print("hi! I am doing this on a mac and the letters are tiny!")
+
+#--------------------------------------------------------------------------------------                     
+
+name = input("What is your name?") 
+name = name.lower().strip()
+print("you said " + name)
+if name.startswith ("j"):       
+    print("Thats a pretty good name!")
+else:
+    print("I dont really like that name... Oh well!")
+#--------------------------------------------------------------------------------------
+
+print("bye " + name)
+print("see you soon!")
