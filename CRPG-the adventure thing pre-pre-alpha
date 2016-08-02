@@ -1,0 +1,50 @@
+
+import time
+import random
+import sys
+
+print('hello')
+
+def menufunction():
+    print('type the thingjoseph')
+    menuq = input('> ').lower().strip()
+    if 'start' in menuq:
+        rand_swordm = [13 , 14 , 15 , 16 , 17]
+        rand_swordg = [15 , 16 , 17 , 18 , 19]
+        supgrade = 0
+        
+        rand_bowm = [ 10 , 11 , 12 , 13 , 14]
+        rand_bowg = [ 12 , 13 , 14 , 15 , 16]
+        bupgrade = 0
+#------------------------------------------------
+        staffcfunction():
+        print('yo fam wats ur staff')
+        staffch = input('> ').lower().strip()
+        if 'wind' in staffch:
+            bupgrade = bupgrade + 2
+            
+        elif 'ice' in staffch:
+            monstera = monstera - 2
+
+        elif 'stone' in staffch
+            supgrade = supgrade + 2
+
+        else:
+            staffcfunction()
+#------------------------------------------------
+        staffcfunction()
+#------CYCLOPS-BATTLE---------------------------
+            monsterh = 50
+        while monsterh > 0
+            print('rahh im a cyclops')
+            monstera = 10
+            print(' bow or sword')
+            attack = input('>').lower().strip()
+            if 'sword' in attack:
+                sword = random.choice(rand_swordm) + supgrade
+            
+            
+            
+
+        
+menufunction()

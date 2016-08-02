@@ -1,0 +1,191 @@
+import time
+import random
+import sys
+
+
+
+print('--------------------')
+print('Welcome to...')
+time.sleep(2)
+print('CODE RPG: CAVE ADVENTURE')
+time.sleep(3)
+print('version 1.0.2')
+time.sleep(1)
+print('By ND Studios')
+time.sleep(1)
+    #-------------------------------------------------------
+def menufunction():
+    print('-----------------------')
+    print('type start to battle, type credits to see credits')
+    menuq = input('> ').lower().strip()
+    if 'start' in menuq:
+        print('''ELDER: welcome traveler! This cave is full of many monsters that are very dangerous
+    and we need your help! Take this sword, bow, and magic staff. The sword will do lots of damage,
+    but you may take damage yourself. The bow will do less, but you won't get hurt if the enemy has no
+    range attack. The staff is the same as the sword, but will either do lots or little damage to the enemy,
+    depending on which enemy. Each enemy will have a different weakness.
+    Now be off!
+    ----
+    ''')
+        time.sleep(10)
+        rand_enemy = ['troll','spider','wizard','giant bat',]
+        health = 50
+        trollhealth = 50
+        enemy = random.choice(rand_enemy)
+        if enemy == 'troll':
+            bow = 10
+            sword = 20
+            staff = 10
+        elif enemy == 'spider':
+            bow = 5
+            sword = 15
+            staff = 20
+        elif enemy == 'wizard':
+            bow = 20
+            sword = 5
+            staff = 10
+        elif enemy == 'giant bat':
+            bow = 20
+            sword = 5
+            staff = 10
+        else:
+            sys.exit()
+   
+        time.sleep(5)
+        print('you come across a')
+        print(enemy)
+        time.sleep(1)
+        print("health:")
+        print(health)
+        time.sleep(1)
+        print('enemy health:')
+        print(trollhealth)
+        time.sleep(1)
+
+
+
+        while trollhealth > 0:
+            print('You were attacked! you took 5 damage')
+            health = health - 5
+            print('bow, sword, or staff?')
+            attack =  input('> ').lower().strip()
+
+            if 'bow' in attack or 'Bow' in attack:
+                    print('You used bow! it did')
+                    print(bow)
+                    print('damage! you lost 5 health')
+                    time.sleep(3)
+                    health = health - 5
+                    print('health:')
+                    print(health)
+                    time.sleep(2)
+                    trollhealth = trollhealth - bow
+                    print('enemy health:')
+                    print(trollhealth)
+                    time.sleep(2)
+                    if trollhealth < 1:
+                        print('you win!')
+                        menufunction()
+                      
+                    elif health < 1:
+                        print('you lose')
+                        menufunction()
+
+
+                    elif health < 1 and trollhealth < 1:
+                        print('tie')
+                        menufunction()
+                          
+                    else:
+                        print("he's not dead yet!")
+                        time.sleep(2)
+
+                      
+                
+                      
+        #---------------------------------------------------------------------------
+            elif 'sword' in attack or 'Sword' in attack:
+                print('you used sword! it did')
+                print(sword)
+                print('damage! you lost 15 health!')
+                time.sleep(3)
+                print('health:')
+                health = health - 15
+                print(health)
+                time.sleep(2)
+                trollhealth = trollhealth - sword
+                print('enemy health:')
+                print(trollhealth)
+                time.sleep(2)
+                if trollhealth < 1:
+                    print('you win!')
+                    menufunction()
+
+                elif health < 0:
+                    print('you lose')
+                    menufunction()
+
+                elif health < 0 and trollhealth < 0:
+                    print('tie')
+                    menufunction()
+
+                else:
+                    print("he's not dead yet!")
+                    time.sleep(2)
+
+        #---------------------------------------------------------------------------------------------
+            elif 'staff' in attack or 'Staff' in attack:
+                print('you used staff! it did')
+                print(staff)                
+                print('damage! you lost 10 health!')
+                time.sleep(3)
+                print('health:')
+                health = health - 10
+                print(health)
+                time.sleep(2)
+                trollhealth = trollhealth - staff
+                print('enemy health:')
+                print(trollhealth)
+                time.sleep(2)
+
+                if trollhealth < 1:
+                    print('you win!')
+                    menufunction()
+                    
+                elif health < 1:
+                    print('you lose')
+                    menufunction()
+
+                elif health < 1 and trollhealth < 1:
+                    print('tie')
+                    menufunction()
+
+                else:
+                    print("he's not dead yet!")
+                    time.sleep(2)
+
+
+    elif 'credits' in menuq:
+        print('''Original Idea: Joseph Ryan
+Board of Ideas: Jenna Ryan, Joseph Ryan
+Programmers: Joseph Ryan, Jenna Ryan
+v1.0 Finished: November 5, 2015
+v1.0.2 update: July 31, 2016
+Patch notes: Fixed timing in game and a few
+text errors''')
+
+        menufunction()
+    
+
+    elif 'nd' in menuq:
+        print('''You found the secret! Did you know ND means NimbleDust?''')
+        menufunction()
+
+
+
+
+    else:
+        print('''Type start or credits to begin''')
+        menufunction()
+
+menufunction()
