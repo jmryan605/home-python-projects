@@ -34,7 +34,7 @@ def menufunction():
 #------------------------------------------------
         staffcfunction()
 #------CYCLOPS-BATTLE---------------------------
-            monsterh = 50
+        monsterh = 50
         while monsterh > 0
             print('rahh im a cyclops')
             monstera = 10
@@ -42,6 +42,12 @@ def menufunction():
             attack = input('>').lower().strip()
             if 'sword' in attack:
                 sword = random.choice(rand_swordm) + supgrade
+                monsterh = monsterh - sword
+                
+            elif 'bow' in attack:
+                bow = random.choice(rand_swordm)+ bupgrade
+                monsterh = monsterh - sword
+        
             
             
             
