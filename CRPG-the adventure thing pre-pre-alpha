@@ -33,11 +33,13 @@ def menufunction():
             staffcfunction()
 #------------------------------------------------
         staffcfunction()
-#------CYCLOPS-BATTLE---------------------------
+#----1-CYCLOPS-BATTLE---------------------------
+        def 1battle():
         monsterh = 50
-        while monsterh > 0
+        health = 50
+        monstera = 10
+        while monsterh > 0 and health > 1:
             print('rahh im a cyclops')
-            monstera = 10
             print(' bow or sword')
             attack = input('>').lower().strip()
             if 'sword' in attack:
@@ -47,7 +49,16 @@ def menufunction():
             elif 'bow' in attack:
                 bow = random.choice(rand_swordm)+ bupgrade
                 monsterh = monsterh - sword
+        while monsterh < 1 and health < 1:
+            print('tie')
+            1battle()
         
+        while monsterh > 0 and health < 1:
+            print('you ded')
+            1battle()
+        while monsterh < 1 and health > 0:
+            print('you win! this is the code for the next battle, write it down! A7D1HU')
+            menufunction()
             
             
             
