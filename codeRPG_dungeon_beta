@@ -1,0 +1,222 @@
+
+import time
+import random
+import sys
+
+print('hello')
+
+def menufunction():
+    print('type start')
+    menuq = input('> ').lower().strip()
+    if 'start' in menuq:
+        rand_swordm = [13 , 14 , 15 , 16 , 17]
+        rand_swordg = [15 , 16 , 17 , 18 , 19]
+        supgrade = 0
+        
+        rand_bowm = [ 10 , 11 , 12 , 13 , 14]
+        rand_bowg = [ 12 , 13 , 14 , 15 , 16]
+        bupgrade = 0
+
+        staff = ['nothing']
+
+        monstera = 0
+
+        stupgrade = 0
+
+        print('''the sword does more damage but you take damage. the bow, you
+dont take damage''')
+
+
+        while staff == ['nothing']:
+            print('''yo fam wats ur staff? stone makes your sword better.
+wind makes your bow better, and ice makes the enemy do less damage''')
+            mostera = 0
+            staffch = input('> ').lower().strip()
+            if 'wind' in staffch:
+                bupgrade = bupgrade + 2
+                staff = ['wind']
+            
+            elif 'ice' in staffch:
+                monstera = monstera - 2
+                staff = ['ice'] 
+
+            elif 'stone' in staffch:
+                supgrade = supgrade + 2
+                staff = ['stone']
+
+
+#------------------------------------------------
+#----1-CYCLOPS-BATTLE---------------------------
+        damage = 0
+        monsterh = 50
+        health = 50
+        monstera = 10
+                
+        if staff == ['stone']:
+                supgrade = supgrade + 2 - stupgrade
+        elif staff == ['ice']:
+                monstera = monstera - 2 - stupgrade
+        elif staff == ['wind']:
+                bupgrade = bupgrade + 2 + stupgrade
+
+
+        while monsterh > 0 and health > 1:
+            print('rahh im a cyclops')
+            print("You were hiat for " )
+            print(monstera)
+            health = health - monstera
+            if monsterh > 0 and health < 1:
+                print('you ded')
+                menufunction()
+            print('your health is')
+            print(health)
+            print('the cyclops has')
+            print(monsterh)
+            print(' bow or sword')
+            attack = input('>').lower().strip()
+            if 'sword' in attack:
+                sword = random.choice(rand_swordm) + supgrade
+                damage = sword
+                monsterh = monsterh - damage
+                print(damage)
+#                print('you did '+ damage + 'dmg')
+                print('you took 16 damage')
+                health = health - 16
+                
+            elif 'bow' in attack:
+                bow = random.choice(rand_swordm)+ bupgrade
+                damage = bow
+                monsterh = monsterh - damage
+                print(damage)
+                
+        if monsterh < 1 and health < 1:
+            print('tie! a wizard gave each of you 50 health')
+            monsterh = 50
+            health = 50
+        
+        elif monsterh > 0 and health < 1:
+            print('you ded')
+            menufunction()
+                
+        elif monsterh < 1 and health > 0:
+            print('you win!')
+        upgrade = ['true']
+
+        while upgrade == ['true']:
+            print("you can upgrade ONE SKILL! staff, sword , or bow.")
+            print('bow level:')
+            print(bupgrade)
+            print('sword level:')
+            print(supgrade)
+            print('staff level:')
+            print(stupgrade)
+            upgradeq = input('> ').lower().strip()
+            upgrade = ['false']            
+
+        if 'staff' in upgradeq:
+            stupgrade = stupgrade + 1
+            upgrade = ['false']
+            print('staff level:')
+            print(stupgrade)
+        elif 'sword' in upgradeq:
+            supgrade = supgrade + 1
+            upgrade = ['false']
+            print('sword level:')
+            print(supgrade)
+        elif 'bow' in upgradeq:
+            bupgrade = bupgrade + 1
+            upgrade = ['false']
+            print('bow level:')
+            print(bupgrade)
+
+#------2----------GIANT BATTLE_-----------------
+        damage = 0
+        monsterh1 = 100
+        health1 = 50
+        monstera = 10
+                
+        if staff == ['stone']:
+                supgrade = supgrade + 2 - stupgrade
+        elif staff == ['ice']:
+                monstera = monstera - 2 - stupgrade
+        elif staff == ['wind']:
+                bupgrade = bupgrade + 2 + stupgrade
+
+
+        while monsterh > 0 and health > 1:
+            print('rahh im a cyclops')
+            print("You were hiat for " )
+            print(monstera)
+            health = health - monstera
+            print('your health is')
+            print(health1)
+            print('the cyclops has')
+            print(monsterh1)
+            print(' bow or sword')
+            attack = input('>').lower().strip()
+            if 'sword' in attack:
+                sword = random.choice(rand_swordm) + supgrade
+                damage = sword
+                monsterh = monsterh - damage
+                print(damage)
+#                print('you did '+ damage + 'dmg')
+                print('you took 16 damage')
+                health1 = health1 - 16
+                
+            elif 'bow' in attack:
+                bow = random.choice(rand_swordm)+ bupgrade
+                damage = bow
+                monsterh1 = monsterh1 - damage
+                print(damage)
+                
+        if monsterh1 < 1 and health1 < 1:
+            print('tie! a wizard gave each of you 50 health')
+            monsterh1 = 50
+            health1 = 50
+        
+        elif monsterh1 > 0 and health1 < 1:
+            print('you ded')
+            menufunction()
+                
+        elif monsterh1 < 1 and health1 > 0:
+            print('you win!')
+        upgrade = ['true']
+
+        while upgrade == ['true']:
+            print("you can upgrade ONE SKILL! staff, sword , or bow.")
+            print('bow level:')
+            print(bupgrade)
+            print('sword level:')
+            print(supgrade)
+            print('staff level:')
+            print(stupgrade)
+            upgradeq = input('> ').lower().strip()
+            upgrade = ['false']            
+
+        if 'staff' in upgradeq:
+            stupgrade = stupgrade + 1
+            upgrade = ['false']
+            print('staff level:')
+            print(stupgrade)
+        elif 'sword' in upgradeq:
+            supgrade = supgrade + 1
+            upgrade = ['false']
+            print('sword level:')
+            print(supgrade)
+        elif 'bow' in upgradeq:
+            bupgrade = bupgrade + 1
+            upgrade = ['false']
+            print('bow level:')
+            print(bupgrade) 
+
+        print("gg bro!")
+        menufunction
+            
+
+
+    else:
+        menufunction()
+            
+
+        
+menufunction()
